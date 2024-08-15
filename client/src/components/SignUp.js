@@ -1,15 +1,34 @@
 import React, { useEffect, useState } from "react";
 import "./Styles/SignUp/SignUp.css";
 import Logo from "../img/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function SignUp() {
+  const Navigate = useNavigate();
   const [name, setName] = useState("");
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // ToastFun
+  const notifyError = (msg) => toast.error(msg);
+  const notifySuccess = (msg) => toast.success(msg);
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
   const signUp = () => {
+    
+    // Email Validation
+    if(!emailRegex.test(email)){
+      notifyError("Invalid email!")
+      return
+    } else if(!passRegex.test(password)){
+      notifyError("Password must contains at least 8 characters, including at least 1 lowercase char, 1 uppercase char, 1 number and 1 special letter!")
+      return
+    }
+
+    // fetching signUp info into database
     fetch("http://localhost:5000/signUp", {
       method: "post",
       headers: {
@@ -22,9 +41,15 @@ export default function SignUp() {
         password: password
       })
     }).then(res => res.json())
-      .then(data => {console.log(data);
-    })
-    
+      .then(data => {
+        if(data.err){
+          notifyError(data.err);
+        } else{
+          notifySuccess(data.message);
+          Navigate("/login");
+        }
+        console.log(data);
+    });
   }
 
   return (
@@ -34,13 +59,13 @@ export default function SignUp() {
           <img src={Logo} alt="InstaLogo" className="signUpLogo" />
           <p className="signUpPar">Sign up to see photos and videos<br />from your friends.</p>
           <div>
-            <input type="email" name="email" id="email" value={email} placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
-          </div>
-          <div>
             <input type="text" name="name" id="name" value={name} placeholder="Full Name" onChange={(e) => { setName(e.target.value) }} />
           </div>
           <div>
             <input type="text" name="username" id="username" value={userName} placeholder="Username" onChange={(e) => { setUserName(e.target.value) }} />
+          </div>
+          <div>
+            <input type="email" name="email" id="email" value={email} placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
           </div>
           <div>
             <input type="password" name="password" id="password" value={password} placeholder="Password" onChange={(e) => { setPassword(e.target.value) }} />
