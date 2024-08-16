@@ -1,0 +1,51 @@
+.home .card {
+  max-width: 500px;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 25px auto;
+  border: 1px solid #ADADAD;
+  border-radius: 5px;
+}
+.home .card .profile-pic {
+  display: flex;
+}
+.home .card .profile-pic img {
+  width: 50px;
+  height: auto;
+  padding: 5px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 30px;
+}
+.home .card .profile-pic h5 {
+  margin: 0;
+  padding: 11px;
+}
+.home .card .posts img {
+  width: 100%;
+}
+.home .card .content {
+  padding: 3px 10px;
+  line-height: 4px;
+  text-align: left;
+  border-bottom: 1px solid #ADADAD;
+}
+.home .card .comments {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.home .card .comments input {
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  outline: none;
+  border: none;
+}
+.home .card .comments .comment-btn {
+  border: none;
+  cursor: pointer;
+  color: #007CCE;
+  font-weight: bolder;
+  background-color: transparent;
+}/*# sourceMappingURL=Home.css.map */

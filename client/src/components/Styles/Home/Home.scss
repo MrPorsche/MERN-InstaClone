@@ -1,0 +1,63 @@
+.home {
+
+    .card {
+        max-width: 500px;
+        height: max-content;
+        margin: 25px auto;
+        border: 1px solid #ADADAD;
+        border-radius: 5px;
+
+        .profile-pic {
+            display: flex;
+            
+            img {
+                width: 50px;
+                height: auto;
+                padding: 5px;
+                object-fit: contain;
+                border-radius: 30px;
+            }
+            
+            h5 {
+                margin: 0;
+                padding: 11px;
+            }
+        }
+
+        .posts {
+            
+            img {
+                width: 100%;
+            }
+        }
+
+        .content {
+            padding: 3px 10px;
+            line-height: 4px;
+            text-align: left;
+            border-bottom: 1px solid #ADADAD;
+        }
+
+        .comments {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            input {
+                width: 100%;
+                margin: 0;
+                padding: 10px;
+                outline: none;
+                border: none;
+            }
+
+            .comment-btn {
+                border: none;
+                cursor: pointer;
+                color: #007CCE;
+                font-weight: bolder;
+                background-color: transparent;
+            }
+        }
+    }
+}

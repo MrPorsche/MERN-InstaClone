@@ -1,0 +1,52 @@
+.profile {
+    max-width: 600px;
+    margin: 10px auto;
+
+    .profile-frame {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        .profile-pic {
+            height: fit-content;
+
+            img {
+                width: 160px;
+                height: 160px;
+                object-fit: contain;
+                border-radius: 50%;
+            }
+        }
+
+        .profile-data {
+            width: 50%;
+            text-align: center;
+
+            .profile-info {
+                display: flex;
+                justify-content: space-around;
+
+                p {
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+
+    hr {
+        width: 90%;
+        margin: 25px auto;
+        opacity: 0.8;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+
+        img {
+            width: 30%;
+            margin: 10px;
+        }
+    }
+}
