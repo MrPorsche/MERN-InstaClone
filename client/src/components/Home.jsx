@@ -22,7 +22,7 @@ export default function Home() {
         {/* Content */}
         <div className="content">
           <span className="material-symbols-outlined">favorite</span>
-          <p>1 Like/s</p>
+          <p>10 Likes</p>
           <p>Hanging out with friendz</p>
         </div>
         {/* Comments */}

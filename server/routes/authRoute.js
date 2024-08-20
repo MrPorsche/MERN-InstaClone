@@ -3,6 +3,9 @@ const Router = Express.Router();
 const Mongoose = require("mongoose");
 const USERs = Mongoose.model("Users");
 const Bcrypt = require("bcryptjs");
+const JWT = require("jsonwebtoken");
+const { JWT_SECRET } = require("../keys.js");
+const requireLogin = require("../middleware/requireLogin.js");
 
 Router.get('/', (req, res) => {
     res.send("Welcome");
@@ -49,7 +52,11 @@ Router.post("/login", (req, res) => {
         }
         Bcrypt.compare(password, savedUser.password).then((match) => {
             if(match){
-                return res.status(200).json({ msg: "Successfully Signed In!" })
+                // return res.status(200).json({ msg: "Successfully Signed In!" })
+                const Token = JWT.sign({_id:savedUser.id}, JWT_SECRET);
+                res.json(Token);
+                console.log(Token);
+                
             } else{
                 return res.status(422).json({ err: "Invalid Password, please try again!" })
             }

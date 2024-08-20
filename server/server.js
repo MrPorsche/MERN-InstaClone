@@ -2,15 +2,17 @@ const Express = require("express");
 const App = Express();
 const PORT = 5000;
 const Mongoose = require("mongoose");
-const MongoURI = require('./keys.js');
+const { MongoURI } = require('./keys.js');
 const CORS = require("cors");
 
 
 App.use(CORS());
-require("./models/Users.js");
+require("./models/usersModel.js");
+require("./models/postsModel.js");
 
 App.use(Express.json());
-App.use(require("./routes/Auth.js"));
+App.use(require("./routes/authRoute.js"));
+App.use(require("./routes/postRoute.js"));
 
 Mongoose.connect(MongoURI);
 

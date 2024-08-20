@@ -8,14 +8,17 @@ export const Navbar = () => {
     <div className='navbar'>
         <img src={Logo} alt="InstaLogo" />
         <ul className="nav-menu">
-            <Link to="signUp">
+            <Link to="/signUp">
                 <li>Sign Up</li>
             </Link>
-            <Link to="login">
+            <Link to="/login">
                 <li>Log In</li>
             </Link>
-            <Link to="profile">
+            <Link to="/profile">
                 <li>Profile</li>
+            </Link>
+            <Link to="/post">
+                <li>Post</li>
             </Link>
         </ul>
     </div>

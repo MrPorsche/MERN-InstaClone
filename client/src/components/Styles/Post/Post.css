@@ -1,0 +1,52 @@
+.post {
+  max-width: 500px;
+  margin: 10px auto;
+  border: 1px solid #ADADAD;
+  border-radius: 5px;
+}
+.post .header {
+  display: flex;
+}
+.post .header h4 {
+  margin: 3px auto;
+}
+.post .header #post-btn {
+  border: none;
+  color: #007CCE;
+  background: none;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.post .content {
+  border-top: 1px solid #ADADAD;
+}
+.post .details {
+  border-top: 1px solid #ADADAD;
+}
+.post .details .profile-frame {
+  display: flex;
+  align-items: center;
+}
+.post .details .profile-frame .profile-pic img {
+  width: 35px;
+  height: auto;
+  padding: 5px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 30px;
+}
+.post .details .profile-frame h5 {
+  font-size: 12px;
+}
+.post .details textarea {
+  width: 90%;
+  border: none;
+  outline: none;
+}
+
+#output {
+  width: 300px;
+  border: none;
+  outline: none;
+  margin-top: 5px;
+}/*# sourceMappingURL=Post.css.map */

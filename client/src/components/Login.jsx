@@ -38,6 +38,9 @@ export default function Login() {
           notifyError(data.err);
         } else{
           notifySuccess(data.msg);
+          localStorage.setItem("jwt", data);
+          console.log(data);
+          
           Navigate("/");
         }
         console.log(data);

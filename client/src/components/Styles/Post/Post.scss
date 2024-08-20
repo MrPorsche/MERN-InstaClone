@@ -1,0 +1,63 @@
+.post {
+    max-width: 500px;
+    margin: 10px auto;
+    border: 1px solid #ADADAD;
+    border-radius: 5px;
+
+    .header {
+        display: flex;
+
+        h4 {
+            margin: 3px auto;
+        }
+
+        #post-btn {
+            border: none;
+            color: #007CCE;
+            background:  none;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+    }
+
+    .content {
+        border-top: 1px solid #ADADAD;
+    }
+
+    .details {
+        border-top: 1px solid #ADADAD;
+
+        .profile-frame {
+            display: flex;
+            align-items: center;
+    
+            .profile-pic {
+    
+                img {
+                    width: 35px;
+                    height: auto;
+                    padding: 5px;
+                    object-fit: contain;
+                    border-radius: 30px;
+                }
+            }
+
+            h5{
+                font-size: 12px;
+            }
+        }
+
+        textarea {
+            width: 90%;
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+#output {
+    width: 300px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+}
