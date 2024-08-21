@@ -4,6 +4,12 @@ const requireLogin = require("../middleware/requireLogin");
 const POSTs = Mongoose.model("POSTs");
 const Router = Express.Router();
 
+Router.get("/feed", requireLogin, (req, res) => {
+    POSTs.find()
+        .populate("postedBy","_id name")
+        .then(posts => res.json(posts))
+        .catch(err => console.log(err))
+});
 
 Router.post("/post", requireLogin, (req, res) => {
     const { body, picture } = req.body;
