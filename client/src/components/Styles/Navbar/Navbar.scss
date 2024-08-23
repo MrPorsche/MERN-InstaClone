@@ -10,6 +10,7 @@
 
     ul {
         display: flex;
+        align-items: center;
 
         a {
             text-decoration: none;
@@ -21,5 +22,23 @@
                 padding: 1px 20px;
             }
         }
+    }
+}
+
+.logOut-btn {
+    margin-left: 20px;
+    padding: 13px 25px;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    border: none;
+    border-radius: 15px;
+    color: #FFF;
+    background: #DB183C;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px -10px rgba(219, 24, 44, 0.6);
     }
 }

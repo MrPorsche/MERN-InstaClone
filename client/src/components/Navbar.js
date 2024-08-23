@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Styles/Navbar/Navbar.css";
 import Logo from "../img/logo.png";
+import { LoginContext } from "../context/LoginContext";
 
 export const Navbar = ({ login }) => {
+    const { setModalOpen } = useContext(LoginContext);
     const Login = ()=> {
-        const Token = localStorage.getItem("jwt")
+        const Token = localStorage.getItem("jwt");
         if(login || Token){
             return [
                 <>
@@ -13,6 +15,9 @@ export const Navbar = ({ login }) => {
                         <li>Profile</li>
                     </Link>
                     <Link to="/post">Post</Link>
+                    <Link to={""}>
+                        <button className="logOut-btn" onClick={() => setModalOpen(true)} >Log Out</button>
+                    </Link>
                 </>
             ]
         } else {

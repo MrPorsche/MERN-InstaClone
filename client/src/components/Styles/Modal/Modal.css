@@ -1,0 +1,112 @@
+.darkBg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+  transform: translate(-50%, -50%);
+}
+.darkBg .center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.darkBg .center .modal {
+  width: 250px;
+  height: 170px;
+  background: #FFF;
+  color: #FFF;
+  z-index: 10;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+}
+.darkBg .center .modal .header {
+  height: 50px;
+  background: #FFF;
+  overflow: hidden;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.darkBg .center .modal .header h5 {
+  margin: 0;
+  padding: 10px;
+  color: #2C3E50;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+}
+.darkBg .center .modal .close-btn {
+  padding: 4px 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  color: #FFF;
+  background: rgb(10, 60, 223);
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+  align-self: flex-end;
+  margin-top: -7px;
+  margin-right: -7px;
+}
+.darkBg .center .modal .close-btn:hover {
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+  transform: translate(-4px, 4px);
+}
+.darkBg .center .modal .content {
+  padding: 10px;
+  font-size: 14px;
+  color: #2C3E50;
+  text-align: center;
+}
+.darkBg .center .modal .actions {
+  width: 100%;
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 2px;
+}
+.darkBg .center .modal .actions .btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.darkBg .center .modal .actions .btns .logOut-btn {
+  margin-top: 10px;
+  padding: 11px 28px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  color: #FFF;
+  background: #FF3E4E;
+  transition: all 0.25s ease;
+}
+.darkBg .center .modal .actions .btns .logOut-btn:hover {
+  box-shadow: 0 10px 20px -10px rgba(255, 62, 78, 0.6);
+  transform: translateY(-5px);
+  background: #FF3E4E;
+}
+.darkBg .center .modal .actions .btns .cancel-btn {
+  margin-top: 10px;
+  padding: 11px 28px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #FCFCFC;
+  background: #2C3E50;
+  transition: all 0.25s ease;
+}
+.darkBg .center .modal .actions .btns .cancel-btn:hover {
+  box-shadow: none;
+  transform: translateY(-5px);
+}/*# sourceMappingURL=Modal.css.map */

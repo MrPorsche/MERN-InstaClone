@@ -30,8 +30,15 @@ Router.post("/post", requireLogin, (req, res) => {
     }
 });
 
-Router.post("/post", (req, res) => {});
+Router.get("/myposts", requireLogin, (req, res) => {
+    POSTs.find({ postedBy:req.user._id })
+        .populate("postedBy","_id name")
+        .then(myposts => {
+            res.json(myposts)
+        })
+    
+});
 
-Router.post("/post", (req, res) => {});
+// Router.post("/post", (req, res) => {});
 
 module.exports = Router;
